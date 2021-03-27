@@ -37,6 +37,7 @@ h6 {
 
 a {
   color: var(--cyan);
+  text-decoration: none;
 }
 
 .header-section {
@@ -113,6 +114,44 @@ a {
   opacity: 0.5;
 }
 
+.overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  padding: 1.5rem;
+  overflow-y: scroll;
+  display: none;
+
+  animation: modal 0.3s ease-in;
+}
+
+.active__modal {
+  display: block;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 6rem;
+  padding: 1.2rem;
+  position: relative;
+}
+.modal .modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.close__modal {
+  color: var(--dark-gray);
+  font-size: 18px;
+}
+.modal .nested__card {
+  position: relative;
+}
 .modal .nested__card .card__header {
   position: relative;
 }
@@ -125,9 +164,105 @@ a {
   position: relative;
   font-weight: 700;
   font-size: 1.1rem;
+  margin-left: 40px;
   cursor: pointer;
   -webkit-transition: all 0.25s linear;
   transition: all 0.25s linear;
+}
+.modal .nested__card .card__header .check {
+  display: block;
+  position: absolute;
+  border: 1px solid var(--dark-gray);
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  transition: border 0.25s linear;
+  -webkit-transition: border 0.25s linear;
+}
+.modal .nested__card .card__header .check::before {
+  display: block;
+  position: absolute;
+  content: "";
+  border-radius: 100%;
+  height: 15px;
+  width: 15px;
+  top: 4px;
+  left: 4px;
+  margin: auto;
+  transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+}
+
+input[type="radio"]:checked ~ .check {
+  border: 1px solid var(--cyan);
+}
+input[type="radio"]:checked ~ .check::before {
+  background: var(--cyan);
+}
+.modal .nested__card .card__header a {
+  display: block;
+  position: relative;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.contribute__section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contribute__section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--dark-gray);
+  border: none;
+  opacity: 0.3;
+  display: block;
+  left: 0;
+}
+
+.contribute__section p {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.contribute__action {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contribute__input {
+  border: 1px solid #dbdada;
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.contribute__input span {
+  color: rgb(204, 203, 203);
+  font-weight: 700;
+  margin-left: 20px;
+}
+.contribute__input input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  height: 100%;
+  text-align: left;
+  padding-left: 5px;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 320px) {
@@ -268,6 +403,14 @@ a {
 }
 
 @keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modal {
   from {
     opacity: 0;
   }
