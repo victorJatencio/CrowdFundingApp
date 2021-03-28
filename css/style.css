@@ -265,6 +265,35 @@ input[type="radio"]:checked ~ .check::before {
   font-size: 16px;
 }
 
+.success__modal {
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 6rem;
+  padding: 2rem 1.2rem;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 328px;
+  margin: auto;
+  z-index: 1000;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+}
+.thanks__message {
+  display: flex;
+}
+.success__modal h2 {
+  margin: 1rem 0;
+}
+.success__modal a {
+  margin-top: 2rem;
+}
+
 @media screen and (min-width: 320px) {
   .header-section {
     background: rgb(0, 0, 0);

@@ -162,7 +162,7 @@
 
   <!-- Selection modal start -->
   <div class="overlay">
-    <div class="modal">
+    <div id="modal" class="modal">
       <div class="modal__header">
         <h2>Back this project</h2>
         <a href="#" class="close__modal">
@@ -183,6 +183,17 @@
           Choose to support us without a reward if you simply believe in our project. As a backer,
           you will be signed up to receive product updates via email.
         </p>
+
+        <div class="contribute__section">
+          <p>Enter your pledge</p>
+          <div class="contribute__action">
+            <div class="contribute__input">
+              <span>$</span>
+              <input class="pledge" type="text" value="0">
+            </div>
+            <a href="#" class="btn btn__primary continue__btn">Continue</a>
+          </div>
+        </div>
       </div>
 
       <div class="nested__card">
@@ -207,9 +218,9 @@
           <div class="contribute__action">
             <div class="contribute__input">
               <span>$</span>
-              <input type="text" value="25">
+              <input class="pledge" type="text" value="25">
             </div>
-            <a href="#" class="btn btn__primary">Continue</a>
+            <a href="#" class="btn btn__primary continue__btn">Continue</a>
           </div>
         </div>
 
@@ -229,6 +240,17 @@
         <p class="large__text">
           64<span>left</span>
         </p>
+
+        <div class="contribute__section">
+          <p>Enter your pledge</p>
+          <div class="contribute__action">
+            <div class="contribute__input">
+              <span>$</span>
+              <input class="pledge" type="text" value="64">
+            </div>
+            <a href="#" class="btn btn__primary continue__btn">Continue</a>
+          </div>
+        </div>
       </div>
 
       <div class="nested__card disabled">
@@ -248,26 +270,20 @@
       </div>
     
     </div>
+
+    <div class="success__modal">
+      <div class="modal__header">
+        <img src="./images/icon-check.svg">
+        <h2>Thanks for your support!</h2>
+      </div>
+      <p>
+        Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
+        an email once our campaign is completed.
+      </p>
+      <a href="#" id="clear-modal" class="btn btn__primary">Got it!</a>
+    </div>
   </div>
 
-  <!-- Selected pledge end -->
-
-  <!-- Selected pledge  start -->
-  <!--Enter your pledge
-  $200
-  Continue-->
-  <!-- Selected pledge end -->
-
-  <!-- Selection modal end -->
-
-  <!-- Success modal start -->
-
-  <!--Thanks for your support!
-  Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-  an email once our campaign is completed.
-  Got it! -->
-
-  <!-- Success modal end -->
 
   <script src="js/script.js"></script>
 </body>
